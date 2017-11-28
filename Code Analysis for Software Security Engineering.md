@@ -10,9 +10,13 @@
 ### C)Automated Test Report from Find Bugs 
 An automated test scan was executed on TeamMates in eclipse using Find Bugs. Few settings were done to include only those vulnerabilities which were related to Malicious Code and Security. The Scan resulted in a total of 48 Scary bugs and 2 troubling bugs.
 https://raw.githubusercontent.com/nbiswal/teammates/master/Findbugs%20TeamMates%20Report.xml
+
+<img src="https://github.com/kasiviswanath5555/teammates/blob/master/screenshot1.jpg" width="600">
+
 ### D) Summary of Key Findings:
-For the assurance claim “Feedback session module of TeamMates is acceptably secure to HTTP response splitting Weaknesses”. 
-+ (As part of the claim we did a CWE mapping and checked the CWE ID for the possible mitigation steps. After which we checked TeamMates to see if these mitigation strategies are implemented in the code.)
+As part of the claims we did a CWE mapping and checked the respective CWE IDs for the possible mitigation steps. After which we checked TeamMates to see if these mitigation strategies are implemented in the code in addition to those identified as part of the assurance claims and misuse case threat models.
+
++ For the assurance claim “Feedback session module of TeamMates is acceptably secure to HTTP response splitting Weaknesses”. 
   + #### CWE Mapping – CWE 113 
     + As per CWE 113 the possible mitigation steps for HTTP Response Splitting are Input Validation and Output Encoding. So, the code was reviewed to check if proper input validations and output encoding are done. 
   + #### Manual Code Review 

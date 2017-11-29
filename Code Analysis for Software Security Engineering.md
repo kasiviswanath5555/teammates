@@ -13,6 +13,9 @@
   A manual testing was done on the TeamMates instance in the dev server to check the secure practices are enforced. TeamMates enforces secure access control rights during user Login by using a “GateKeeper.java” class which is accessed by the LoginServlet to check the access control. The GateKeeper class checks if the user account details are present in the GAE datastore. After which the privileges are assigned to the user based on its role. This prevents unauthorized users to access and exploit the teammates modules. 
   TeamMates also uses records all the user activities in logs which in turn warns the administrator of possible attack.
 
++ For the assurance claim “Teammates is acceptably secure to exploitable XSS weakness”, a manual code review was done to verify whether TeamMates enforces strong sanitization practices to avoid the web sessions from vulnerable CSRF attack.
+ As part of manual code review, we found that in TeamMates, the Http responses for the FeedbackSession Module are properly sanitized in TeamMates using the “SanitizationHelper” class. This class contains methods to sanitize user provided parameters so that they conform to given data format and possible threats can be removed first as well as methods to revert sanitized text back to its previous unsanitized state. The class CryptoHelper Ensures the encryption policies required for the feedback session.
+
 ### C) Automated Test Report from Find Bugs 
 + An automated test scan was executed on TeamMates in eclipse using Find Bugs. Few settings were done to include only those vulnerabilities which were related to Malicious Code and Security. 
 
@@ -40,6 +43,12 @@ https://raw.githubusercontent.com/nbiswal/teammates/master/Findbugs%20TeamMates%
   + #### Automated code Scanning 
     + Automated code Scanning through Find bugs highlighted some security vulnerabilities i.e. Potential CRLF injection for logs which can impact the log activities. TeamMates enforces secure input data validation to prevent the exploitation of logs. Also the automated code scanning refers to the below line of code in the StringHelper class as insecure 
     Cipher c = Cipher.getInstance ("AES/ECB/PKCS5Padding"); -->(used for encrypting the userid's) but TeamMates already enforces secure practices like using HMAC-MD5 algorithm which is first applied on the data(cryptoHelper class)and then the cryptographic functions are applied.
+    
+ + For the assurance claim “Teammates is acceptably secure to exploitable XSS weakness”.
+   + #### CWE Mapping: CWE 79, CWE 80, CWE 85, CWE 87, CWE 712, CWE 725, CWE 809, CWE 928
+     + Most of the above CWE ID’s mentioned that the possible mitigation steps for avoiding exploitable XSS weakness are by checking each input parameter against a rigorous positive specification (i.e. Input Validation) and by Output Encoding that can be handled by the downstream component that is reading the output.
+   + #### Possible attack Pattern CAPEC-63
+     + An adversary embeds malicious scripts in content that will be served to web browsers. The goal of the attack is for the target software, the client-side browser, to execute the script with the users' privilege level. An attack of this type exploits a programs' vulnerabilities that are brought on by allowing remote hosts to execute code and scripts. Web browsers, for example, have some simple security controls in place, but if a remote attacker can execute scripts (through injecting them in to user-generated content like bulletin boards) then these controls may be bypassed. Further, these attacks are very difficult for an end user to detect.
     
 ### E) Issue Request Links
 + https://github.com/TEAMMATES/teammates/issues/8178

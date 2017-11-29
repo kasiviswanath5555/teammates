@@ -35,7 +35,7 @@ https://raw.githubusercontent.com/nbiswal/teammates/master/Findbugs%20TeamMates%
   + #### CWE Mapping – CWE 257, CWE 307, CWE 287, CWE 328, CWE 334, CWE 521, CWE 640, CWE 549, CWE 804
     + As per most of the CWE ID’s the possible mitigation steps for preventing brute force attack are mostly the same i.e. Use strong, non-reversible encryption to protect stored passwords, Disconnecting the user after a small number of failed login attempts. As per the manual Code review TeamMates uses a secure authentication mechanism by using the Gatekeeper class. As per the attack pattern CAPEC 49 we tried to brute force the system by using an existing google login id. We could see Google App Engine not only enforces strong password practices but also enforces secure practices like CAPTCHA after a certain number of failed login attempts. Google Server also restricts the use of verbose error messages to mitigate the attacks. Even if we login using a google Id and password TeamMates doesn’t allow to access any of its modules if the user is not registered.  
   
-   + #### Automated code Scanning 
+  + #### Automated code Scanning 
     + Automated code Scanning through Find bugs highlighted some security vulnerabilities i.e. Potential CRLF injection for logs which can impact the log activities. TeamMates enforces secure input data validation to prevent the exploitation of logs.
     
 ### E) Issue Request Links

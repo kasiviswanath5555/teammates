@@ -2,8 +2,6 @@
 
 ### A) Code Review Strategy 
    We did a manual code review for the Critical Claims as well as used the automated tool “Find Bugs” for automated scanning of TeamMates. Before running the automation tool, we had filtered the tool to check for Security and Malicious Code vulnerabilities related issues.
-
-   Based on our top 5 critical assurance claims, we did a thorough manual review of all the modules that may be impacted as part of these claims. 
    
 ### B) Manual code review of critical security functions
 

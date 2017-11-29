@@ -7,7 +7,7 @@
 ### B) Manual code review of critical security functions
 + A manual code review was done on the assurance claim “Feedback session module of TeamMates is acceptably secure to HTTP response splitting Weaknesses”, a code review was done to verify if there were strategies implemented in the code to prevent the injection of malicious special characters i.e. CR and LF through HTTP headers during the submission of feedback session form and before the storage of the form attributes in the TeamMates Storage entities. 
 + As part of the assurance claim “Login Module of TeamMates is acceptably secure to brute force attack”, a manual code review was done to verify if there were strategies implemented to ensure proper access control rights to prevent unauthorized access to exploit the TeamMates Login Module through brute force attack. A manual testing was done on the TeamMates instance in the dev server to check the secure practices that are enforced.
-### C)Automated Test Report from Find Bugs 
+### C) Automated Test Report from Find Bugs 
 An automated test scan was executed on TeamMates in eclipse using Find Bugs. Few settings were done to include only those vulnerabilities which were related to Malicious Code and Security. The Scan resulted in a total of 48 Scary bugs and 2 troubling bugs.
 https://raw.githubusercontent.com/nbiswal/teammates/master/Findbugs%20TeamMates%20Report.xml
 
@@ -34,6 +34,6 @@ As part of the claims we did a CWE mapping and checked the respective CWE IDs fo
     + As per the attack pattern CAPEC 49 we tried to brute force the system by using an existing google login id. We could see Google App Engine not only enforces strong password practices but also enforces secure practices like CAPTCHA after a certain number of failed login attempts. Google Server also restricts the use of verbose error messages to mitigate the attacks. Even if we login using a google Id and password TeamMates doesn’t allow to access any of its modules if the user is not registered.  
   + #### Automated code Scanning 
     + Automated code Scanning through Find bugs highlighted some security vulnerabilities i.e. Potential CRLF injection for logs which can impact the log activities. TeamMates enforces secure input data validation to prevent the exploitation of logs.
-### Links
+### E) Issue Request Links
 + https://github.com/TEAMMATES/teammates/issues/8178
 + https://github.com/TEAMMATES/teammates/issues/8183

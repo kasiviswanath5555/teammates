@@ -1,7 +1,7 @@
 ### TEAM - MAVERICKS - Code Analysis for Software Security Engineering
 
 ### A) Code Review Strategy 
-   We did a manual code review for the Critical Claims as well as used the automated tool “Find Bugs” for automated scanning of TeamMates. Before running the automation tool, we had filtered the tool to check for Security and Malicious Code vulnerabilities related issues.
+   We did a checklist based strategy for the Critical Claims where each of the members of the team focussed on a particular claim and accordingly searched the modules in TeamMates for possible security issues. We have also used the automated tool “Find Bugs” for automated scanning of TeamMates. Before running the automation tool, we had filtered the tool to check for Security and Malicious Code vulnerabilities related issues. 
    
 ### B) Manual code review of critical security functions
 
@@ -25,6 +25,8 @@
 
 + The Scan resulted in a total of 48 Scary bugs and 2 troubling bugs.The full report link is provided below
 https://raw.githubusercontent.com/nbiswal/teammates/master/Findbugs%20TeamMates%20Report.xml
+
++ When we explored the bugs for the mitigation strategies in Find Bugs we could see Teammates has already applied those strategies to the code modules.
 
 + Screenshot of the report from the bug explorer
 <img src="https://github.com/kasiviswanath5555/teammates/blob/master/screenshot1.jpg" width="600">
@@ -61,6 +63,7 @@ https://raw.githubusercontent.com/nbiswal/teammates/master/Findbugs%20TeamMates%
      + Most of the above CWE ID’s mentioned that the possible mitigation steps for avoiding exploitable XSS weakness are by checking each input parameter against a rigorous positive specification (i.e. Input Validation) and by Output Encoding that can be handled by the downstream component that is reading the output.
    + #### Automated code Scanning
      +  Automated code Scanning through Find bugs highlighted some security vulnerabilities i.e. “Unvalidated_Redirect” related to the redirect page in Controller Servlet. But TeamMates uses the redirect URL to redirect unauthorized users to an error page. Also “Unvalidated_Redirect” was flagged for the home page URL of the TeamMates users but TeamMates enforces secure practices to enforce secure sanitization and encoding practices for HTML.
+    
    
 ### E) Issue Request Links
 + https://github.com/TEAMMATES/teammates/issues/8178

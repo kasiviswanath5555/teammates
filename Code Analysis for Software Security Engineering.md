@@ -59,9 +59,7 @@ https://raw.githubusercontent.com/nbiswal/teammates/master/Findbugs%20TeamMates%
  + For the assurance claim “Teammates is acceptably secure to exploitable XSS weakness”.
    + #### CWE Mapping: CWE 79, CWE 80, CWE 85, CWE 87, CWE 712, CWE 725, CWE 809, CWE 928
      + Most of the above CWE ID’s mentioned that the possible mitigation steps for avoiding exploitable XSS weakness are by checking each input parameter against a rigorous positive specification (i.e. Input Validation) and by Output Encoding that can be handled by the downstream component that is reading the output.
-   + #### Possible attack Pattern CAPEC-63
-     + An adversary embeds malicious scripts in content that will be served to web browsers. The goal of the attack is for the target software, the client-side browser, to execute the script with the users' privilege level. An attack of this type exploits a programs' vulnerabilities that are brought on by allowing remote hosts to execute code and scripts. Web browsers, for example, have some simple security controls in place, but if a remote attacker can execute scripts (through injecting them in to user-generated content like bulletin boards) then these controls may be bypassed. Further, these attacks are very difficult for an end user to detect.
-    
+   
 ### E) Issue Request Links
 + https://github.com/TEAMMATES/teammates/issues/8178
 + https://github.com/TEAMMATES/teammates/issues/8183

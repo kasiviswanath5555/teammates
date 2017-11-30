@@ -59,6 +59,8 @@ https://raw.githubusercontent.com/nbiswal/teammates/master/Findbugs%20TeamMates%
  + For the assurance claim “Teammates is acceptably secure to exploitable XSS weakness”.
    + #### CWE Mapping: CWE 79, CWE 80, CWE 85, CWE 87, CWE 712, CWE 725, CWE 809, CWE 928
      + Most of the above CWE ID’s mentioned that the possible mitigation steps for avoiding exploitable XSS weakness are by checking each input parameter against a rigorous positive specification (i.e. Input Validation) and by Output Encoding that can be handled by the downstream component that is reading the output.
+   + #### Automated code Scanning
+     +  Automated code Scanning through Find bugs highlighted some security vulnerabilities i.e. “Unvalidated_Redirect” related to the redirect page in Controller Servlet. But TeamMates uses the redirect URL to redirect unauthorized users to an error page. Also “Unvalidated_Redirect” was flagged for the home page URL of the TeamMates users but TeamMates enforces secure practices to enforce secure sanitization and encoding practices for HTML.
    
 ### E) Issue Request Links
 + https://github.com/TEAMMATES/teammates/issues/8178
